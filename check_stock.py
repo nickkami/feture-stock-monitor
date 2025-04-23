@@ -24,3 +24,6 @@ for block in product_blocks:
         print(f"🟢 {name} está DISPONÍVEL")
 
 print("\n✅ Verificação concluída.")
+
+# Forçando execução do GitHub Actions
+

@@ -25,5 +25,5 @@ for block in product_blocks:
 
 print("\n✅ Verificação concluída.")
 
-# Forçando execução do GitHub Actions
+
 

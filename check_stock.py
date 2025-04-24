@@ -5,6 +5,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import datetime
 import os
+import json
 
 # Função para enviar e-mail
 def enviar_email(assunto, corpo_email):
@@ -39,6 +40,22 @@ def registrar_historico(mensagem):
         data_hora = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         f.write(f"{data_hora} - {mensagem}\n")
 
+# Função para salvar o estado dos produtos
+def salvar_estado_produtos(estado_produtos):
+    with open("estado_produtos.json", "w", encoding="utf-8") as f:
+        json.dump(estado_produtos, f)
+
+# Função para carregar o estado dos produtos
+def carregar_estado_produtos():
+    try:
+        with open("estado_produtos.json", "r", encoding="utf-8") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return {}
+
+# Carregar o estado atual dos produtos armazenado
+estado_antigo = carregar_estado_produtos()
+
 # URL do site e cabeçalhos
 url = "https://www.feture.com.tw/product_list.asp"
 headers = {"User-Agent": "Mozilla/5.0"}
@@ -49,12 +66,11 @@ soup = BeautifulSoup(response.content, "html.parser")
 # Seleciona os blocos de produtos
 product_blocks = soup.select("div.product-item")
 
+# Inicializa um dicionário para armazenar o novo estado dos produtos
+estado_atual = {}
+
 # Mensagem inicial
 print("🔍 Verificando produtos 'SOLD OUT'...\n")
-historico_mensagem = "Início da verificação dos produtos."
-
-# Registra no histórico
-registrar_historico(historico_mensagem)
 
 for block in product_blocks:
     name_tag = block.select_one("h5.title a")
@@ -63,16 +79,25 @@ for block in product_blocks:
     # Verifica se tem imagem de soldout
     soldout_img = block.select_one("div.product-img img[src*='soldout.jpg']")
 
-    if soldout_img:
-        mensagem = f"❌ {name} está ESGOTADO"
-        print(mensagem)
+    # Estado atual do produto
+    estado_atual[name] = 'soldout' if soldout_img else 'disponivel'
+
+    if estado_antigo.get(name) != estado_atual[name]:
+        # Se o estado do produto mudou, envia o e-mail
+        if estado_atual[name] == 'soldout':
+            mensagem = f"❌ {name} está ESGOTADO"
+            print(mensagem)
+            enviar_email("Produto Sold Out", f"O produto '{name}' está ESGOTADO no estoque.")
+        else:
+            mensagem = f"🟢 {name} está DISPONÍVEL"
+            print(mensagem)
+            enviar_email("Produto Disponível", f"O produto '{name}' voltou ao estoque.")
+        
+        # Atualiza o histórico
         registrar_historico(mensagem)
-        # Envia o e-mail
-        enviar_email("Produto Sold Out", f"O produto '{name}' está ESGOTADO no estoque.")
-    else:
-        mensagem = f"🟢 {name} está DISPONÍVEL"
-        print(mensagem)
-        registrar_historico(mensagem)
+
+# Salva o estado atualizado dos produtos
+salvar_estado_produtos(estado_atual)
 
 # Finaliza a verificação
 print("\n✅ Verificação concluída.")

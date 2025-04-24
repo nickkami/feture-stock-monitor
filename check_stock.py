@@ -4,12 +4,13 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import datetime
+import os
 
 # Função para enviar e-mail
 def enviar_email(assunto, corpo_email):
-    EMAIL_FROM = "seuemail@gmail.com"  # Substitua pelo seu email
-    EMAIL_TO = "destinatario@gmail.com"  # Substitua pelo email do destinatário
-    EMAIL_PASSWORD = "seu_password_aqui"  # Substitua pelo seu app password ou senha
+    EMAIL_FROM = os.getenv("EMAIL_FROM")
+    EMAIL_TO = os.getenv("EMAIL_TO")
+    EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
     smtp_server = "smtp.gmail.com"
     smtp_port = 587
 

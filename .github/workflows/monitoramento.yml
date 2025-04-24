@@ -1,14 +1,13 @@
-name: Monitoramento de Estoque Feature
+name: Monitoramento de Estoque
 
 on:
   schedule:
-    - cron: '*/10 * * * *'  # Executa a cada 10 minutos
+    - cron: '*/10 * * * *' # a cada 10 minutos
   workflow_dispatch:
 
 jobs:
-  monitorar-estoque:
+  check:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout do repositório
         uses: actions/checkout@v3
@@ -16,17 +15,24 @@ jobs:
       - name: Configurar Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
+          python-version: '3.11'
 
       - name: Instalar dependências
         run: |
           python -m pip install --upgrade pip
           pip install requests beautifulsoup4
 
-      - name: Executar script de monitoramento
+      - name: Rodar o script de monitoramento
         env:
           EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
         run: python check_stock.py
 
+      - name: Commit das alterações (estado_produtos.json e historico.txt)
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add estado_produtos.json historico.txt || true
+          git commit -m "Atualização automática do estado dos produtos [ci skip]" || echo "Sem alterações"
+          git push

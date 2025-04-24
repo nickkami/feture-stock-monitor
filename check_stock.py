@@ -24,13 +24,13 @@ def enviar_email(assunto, corpo_email):
 
     # Envio do e-mail
     try:
-        server = smtplib.SMTP(smtp_server, smtp_port)
-        server.starttls()  # Encriptar a conexão
-        server.login(EMAIL_FROM, EMAIL_PASSWORD)
-        text = msg.as_string()
-        server.sendmail(EMAIL_FROM, EMAIL_TO, text)
-        server.quit()
-        print(f"📧 E-mail enviado com sucesso para {EMAIL_TO}.")
+        # Conectar ao servidor SMTP para cada envio
+        with smtplib.SMTP(smtp_server, smtp_port) as server:
+            server.starttls()  # Encriptar a conexão
+            server.login(EMAIL_FROM, EMAIL_PASSWORD)
+            text = msg.as_string()
+            server.sendmail(EMAIL_FROM, EMAIL_TO, text)
+            print(f"📧 E-mail enviado com sucesso para {EMAIL_TO}.")
     except Exception as e:
         print(f"⚠️ Falha no envio de e-mail: {e}")
 
@@ -88,8 +88,8 @@ for block in product_blocks:
             mensagem = f"❌ {name} está ESGOTADO"
             print(mensagem)
             enviar_email("Produto Sold Out", f"O produto '{name}' está ESGOTADO no estoque.")
-        else:
-            mensagem = f"🟢 {name} está DISPONÍVEL"
+        elif estado_atual[name] == 'disponivel':
+            mensagem = f"🟢 {name} voltou a ESTAR DISPONÍVEL"
             print(mensagem)
             enviar_email("Produto Disponível", f"O produto '{name}' voltou ao estoque.")
         

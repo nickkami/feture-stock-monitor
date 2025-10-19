@@ -56,7 +56,7 @@ estado_atual = {}
 
 primeira_execucao = not bool(estado_antigo)
 
-print("🔍 Verificando alterações nos produtos...\n")
+print("🔍 Verificando alterações nos produtos...\n") 
 
 for block in product_blocks:
     name_tag = block.select_one("h5.title a")

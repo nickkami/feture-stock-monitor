@@ -59,7 +59,7 @@ estado_antigo = carregar_estado_produtos()
 estado_atual = {}
 primeira_execucao = not bool(estado_antigo)
 
-print("🔍 Verificando alterações nos produtos...\n")
+print("🔍 Verificando alterações nos produtos...\n") 
 
 for block in product_blocks:
     # Nome do produto

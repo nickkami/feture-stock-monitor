@@ -89,4 +89,4 @@ salvar_estado_produtos(estado_atual)
 if primeira_execucao:
     print("\n📌 Primeira execução detectada. Estado inicial salvo sem envio de e-mails.")
 else:
-    print("\n✅ Verificação finalizada com envio de e-mails para produtos alterados.")
+    print("\n✅ Verificação finalizada com envio de e-mails para produtos alterados.") 

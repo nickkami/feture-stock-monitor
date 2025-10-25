@@ -45,30 +45,25 @@ def registrar_historico(mensagem):
         timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         f.write(f"{timestamp} - {mensagem}\n")
 
-# URL do Pinkoi
-url = "https://jp.pinkoi.com/search?q=feture"
+url = "https://www.feture.com.tw/product_list.asp"
 headers = {"User-Agent": "Mozilla/5.0"}
 response = requests.get(url, headers=headers)
 soup = BeautifulSoup(response.content, "html.parser")
-
-# Seleciona os cards de produtos
-# Nota: verifique no inspetor do navegador o seletor correto
-product_blocks = soup.select("div.searchResultCard")
+product_blocks = soup.select("div.product-item")
 
 estado_antigo = carregar_estado_produtos()
 estado_atual = {}
+
 primeira_execucao = not bool(estado_antigo)
 
 print("🔍 Verificando alterações nos produtos...\n") 
 
 for block in product_blocks:
-    # Nome do produto
-    name_tag = block.select_one("div.SearchResultCardContent_title_")  # atualizar seletor conforme HTML real
+    name_tag = block.select_one("h5.title a")
     name = name_tag.get_text(strip=True) if name_tag else "Produto sem nome"
 
-    # Verifica se está sold out
-    soldout_tag = block.find(string="販売終了")
-    status_atual = 'soldout' if soldout_tag else 'disponivel'
+    soldout_img = block.select_one("div.product-img img[src*='soldout.jpg']")
+    status_atual = 'soldout' if soldout_img else 'disponivel'
     estado_atual[name] = status_atual
 
     status_antigo = estado_antigo.get(name)

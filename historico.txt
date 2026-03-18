@@ -165,3 +165,5 @@
 2026-03-05 04:42:11 - 500TX - 2LOUD CUSTOM-亮光曜石黑(銀) mudou de None para disponivel
 2026-03-05 04:42:12 - 500TX - 2LOUD CUSTOM-亮光星空銀(暗紅) mudou de None para disponivel
 2026-03-05 04:42:14 - 500TX - 2LOUD CUSTOM-亮光星空銀(黑) mudou de None para soldout
+2026-03-18 13:49:29 - THOMAS、SINX、JAYNES專用內襯組 (頭襯+耳襯) mudou de disponivel para soldout
+2026-03-18 13:49:30 - THOMAS、SINX、JAYNES專用耳襯 mudou de disponivel para soldout

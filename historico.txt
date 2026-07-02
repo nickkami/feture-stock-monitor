@@ -272,3 +272,5 @@
 2026-07-02 03:41:43 - LENNON Ⅱ 藍儂 - 亮光雪地白 mudou de None para disponivel
 2026-07-02 03:41:44 - LENNON Ⅱ 藍儂 - 亮光玄武灰 mudou de None para disponivel
 2026-07-02 03:41:46 - LENNON Ⅱ 藍儂 - 亮光曜石黑 mudou de None para disponivel
+2026-07-02 06:56:23 - LENNON 藍儂-亮光雪地白 mudou de disponivel para soldout
+2026-07-02 06:56:24 - LENNON 藍儂-亮光玄武灰 mudou de disponivel para soldout

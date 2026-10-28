@@ -355,3 +355,10 @@
 2026-10-22 01:56:01 - SIMON賽門-頭襯 mudou de soldout para disponivel
 2026-10-22 01:56:02 - SIMON賽門-耳襯 mudou de soldout para disponivel
 2026-10-27 05:41:20 - VAN Ⅳ 汎 - 亮光淺奶茶 mudou de disponivel para soldout
+2026-10-28 11:41:05 - 500TX - 1 TAKE CUSTOM-亮光曜石黑 mudou de None para disponivel
+2026-10-28 11:41:05 - 500TX - 1 TAKE CUSTOM-亮光雪地白 mudou de None para disponivel
+2026-10-28 11:41:06 - 500TX - 2 Loud Custom - 亮光曜石黑(橘) mudou de None para disponivel
+2026-10-28 11:41:07 - 500TX - 2 Loud Custom - 亮光曜石黑(銀) mudou de None para soldout
+2026-10-28 11:41:07 - 500TX - 2 Loud Custom - 亮光星空銀(暗紅) mudou de None para disponivel
+2026-10-28 11:41:08 - 500TX - 2 Loud Custom - 亮光星空銀(黑) mudou de None para soldout
+2026-10-28 11:41:08 - 安全帽頭圍調整泡棉墊條（6入） mudou de None para disponivel

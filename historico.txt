@@ -369,3 +369,6 @@
 2026-10-29 07:12:42 - JAYNES Ⅱ 傑尼斯 - 亮光淺褐綠 mudou de None para disponivel
 2026-10-29 07:12:44 - JAYNES Ⅱ 傑尼斯 - 亮光淺奶茶 mudou de None para disponivel
 2026-10-29 07:12:45 - JAYNES Ⅱ 傑尼斯 - 亮光復古紅 mudou de None para disponivel
+2026-10-29 14:24:55 - JAYNES 傑尼斯-亮光淺奶茶 mudou de disponivel para soldout
+2026-10-29 14:24:56 - JAYNES 傑尼斯-亮光淺褐綠 mudou de disponivel para soldout
+2026-10-29 14:24:57 - JAYNES 傑尼斯-亮光曜石黑 mudou de disponivel para soldout

@@ -365,3 +365,7 @@
 2026-10-28 17:26:03 - THOMAS、SINX、JAYNES專用內襯組 (頭襯+耳襯) mudou de disponivel para soldout
 2026-10-28 17:26:04 - THOMAS、SINX、JAYNES專用頭襯 mudou de disponivel para soldout
 2026-10-28 17:26:05 - THOMAS、SINX、JAYNES專用耳襯 mudou de disponivel para soldout
+2026-10-29 07:12:41 - JAYNES Ⅱ 傑尼斯 - 亮光曜石黑 mudou de None para disponivel
+2026-10-29 07:12:42 - JAYNES Ⅱ 傑尼斯 - 亮光淺褐綠 mudou de None para disponivel
+2026-10-29 07:12:44 - JAYNES Ⅱ 傑尼斯 - 亮光淺奶茶 mudou de None para disponivel
+2026-10-29 07:12:45 - JAYNES Ⅱ 傑尼斯 - 亮光復古紅 mudou de None para disponivel

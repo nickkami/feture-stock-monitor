@@ -376,3 +376,15 @@
 2026-11-03 10:44:04 - ORSON 奧森 - 亮光深曜銀 mudou de disponivel para soldout
 2026-11-05 11:35:57 - DEREK Ⅲ 德瑞克-亮光青岩藍 mudou de disponivel para soldout
 2026-11-06 12:59:15 - VAN Ⅲ 汎-亞光冰島銀 mudou de soldout para disponivel
+2026-11-11 01:23:14 - 500TX Classic - 專用內襯組(頭襯+耳襯) mudou de None para disponivel
+2026-11-11 01:23:15 - 500TX Classic - 專用頭襯 mudou de None para disponivel
+2026-11-11 01:23:16 - 500TX Classic - 專用耳襯 mudou de None para disponivel
+2026-11-11 01:23:17 - 500TX - 7Seas Classic - 亮光曜石黑 mudou de None para disponivel
+2026-11-11 01:23:18 - 500TX - 7Seas Classic - 亮光冰島銀 mudou de None para disponivel
+2026-11-11 01:23:19 - 500TX - 7Seas Classic - 亮光椰奶白 mudou de None para disponivel
+2026-11-11 01:23:19 - 500TX - 4WARD Classic - 亮光淺奶茶 mudou de None para disponivel
+2026-11-11 01:23:20 - 500TX - 4WARD Classic - 亮光星空銀 mudou de None para disponivel
+2026-11-11 01:23:21 - 500TX - 4WARD Classic - 亮光玄武灰 mudou de None para disponivel
+2026-11-11 01:23:22 - 500TX - 3Cheers Classic - 亮光曜石黑 mudou de None para disponivel
+2026-11-11 01:23:23 - 500TX - 3Cheers Classic - 亮光雪地白 mudou de None para disponivel
+2026-11-11 01:23:24 - 500TX - 3Cheers Classic - 亮光星空銀 mudou de None para disponivel
